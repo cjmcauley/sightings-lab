@@ -20,7 +20,7 @@
 
 <script>
 import { eventBus } from '@/main.js'
-import birdService from '@/services/birdsService.js'
+import birdsService from '@/services/birdsService.js'
 export default {
 	name: "sightings-form",
 	data(){
@@ -39,9 +39,11 @@ export default {
 				location: this.location,
 				date: this.date
 			}
-			birdService.postBird(bird)
+			birdsService.postBird(bird)
 			.then(res => eventBus.$emit('bird-added',
 		res))
+
+
 		}
 	 }
 }
